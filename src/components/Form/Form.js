@@ -27,7 +27,7 @@ submitReservation = event => {
     time,
     number
   }
-  this.addReservation(reservation)
+  this.props.addReservation(reservation)
 }
 
   render() {
