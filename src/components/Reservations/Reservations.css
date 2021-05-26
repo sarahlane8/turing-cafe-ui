@@ -1,0 +1,9 @@
+.reservation-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  padding-right: 5em;
+  padding-left: 5em;
+}
