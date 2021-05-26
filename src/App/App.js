@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+  }
+
   render() {
     return (
       <div className="App">
@@ -10,11 +14,12 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          
+
         </div>
       </div>
     )
   }
+
 }
 
 export default App;
