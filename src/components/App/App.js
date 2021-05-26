@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { getAllReservations } from '../../apiCalls.js'
+import Reservations from '../Reservations/Reservations'
+
 
 
 class App extends Component {
@@ -26,7 +28,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-
+          <Reservations reservations={this.state.reservations} />
         </div>
       </div>
     )
