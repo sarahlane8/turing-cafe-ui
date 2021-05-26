@@ -38,7 +38,7 @@ describe ('Homepage', () => {
       .get('form >input').eq(1).type('06/24')
       .get('form >input').eq(2).type('7')
       .get('form >input:last').type('3')
-      .get('button').click()
+      .get('button:first').click()
       .get('.card').should('have.length', 10)
   })
 
@@ -47,8 +47,13 @@ describe ('Homepage', () => {
       .get('form >input:first').type('Sarah')
       .get('form >input').eq(1).type('06/24')
       .get('form >input').eq(2).type('7')
-      .get('button').click()
+      .get('button:first').click()
       .get('.card').should('have.length', 9)
   })
 
+  it('should delete a card when the cancel button is clicked', () => {
+    cy.get('.card').should('have.length', 9)
+      .get('.card:first').get('button').click()
+      .get('.card').should('have.length', 8)
+  })
 })
