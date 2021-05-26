@@ -22,16 +22,19 @@ submitReservation = event => {
   event.preventDefault()
 
   const {name, date, time, number} = this.state;
-  const reservation = {
-    id: Date.now(),
-    name,
-    date,
-    time,
-    number: parseInt(number)
+  if (name && date && time && number) {
+    const reservation = {
+      id: Date.now(),
+      name,
+      date,
+      time,
+      number: parseInt(number)
+    }
+    this.props.addReservation(reservation)
+    this.clearInputs()
   }
-  this.props.addReservation(reservation)
-  this.clearInputs()
 }
+
   clearInputs = () => {
     this.setState({
       name: '',

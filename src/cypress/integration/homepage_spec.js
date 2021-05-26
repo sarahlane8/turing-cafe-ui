@@ -40,6 +40,14 @@ describe ('Homepage', () => {
       .get('form >input:last').type('3')
       .get('button').click()
       .get('.card').should('have.length', 10)
+  })
 
+  it('should not add a card if an input field is left blank', () => {
+    cy.get('.card').should('have.length', 9)
+      .get('form >input:first').type('Sarah')
+      .get('form >input').eq(1).type('06/24')
+      .get('form >input').eq(2).type('7')
+      .get('button').click()
+      .get('.card').should('have.length', 9)
   })
 })
