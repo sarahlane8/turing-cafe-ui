@@ -20,7 +20,14 @@ handleChange = event => {
 
 submitReservation = event => {
   event.preventDefault()
-
+  const {name, date, time, number} = this.state;
+  const reservation = {
+    name,
+    date,
+    time,
+    number
+  }
+  this.addReservation(reservation)
 }
 
   render() {
