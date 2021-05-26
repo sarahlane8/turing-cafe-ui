@@ -6,6 +6,9 @@ class App extends Component {
     super()
   }
 
+  componentDidMount = () => {
+    
+  }
   render() {
     return (
       <div className="App">
