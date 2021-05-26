@@ -18,6 +18,11 @@ handleChange = event => {
   })
 }
 
+submitReservation = event => {
+  event.preventDefault()
+
+}
+
   render() {
     return (
       <form className='form' >
@@ -52,6 +57,9 @@ handleChange = event => {
             placeholder="Number of guests"
             onChange={event => this.handleChange(event)}
           />
+
+          <button onclick={() => this.submitReservation}>Make Reservation</button>
+          
         </form>
     )
 
