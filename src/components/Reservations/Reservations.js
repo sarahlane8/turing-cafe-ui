@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from '../Card/Card'
 
 const Reservations = ({ reservations }) => {
   const reservationCards = reservations.map(reservation => {
@@ -14,7 +15,9 @@ const Reservations = ({ reservations }) => {
     )
   })
   return (
-    {resrvationCards}
+    <div className='reservation-grid'>
+    {reservationCards}
+    </div>
   )
 }
 
