@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { getAllReservations } from '../../apiCalls.js'
 
+
 class App extends Component {
   constructor() {
     super()
@@ -13,9 +14,9 @@ class App extends Component {
   componentDidMount = () => {
     getAllReservations()
       .then(data => {
-        this.setState = reservations: data
-      }, console.log(this.state))
-  }
+        this.setState({reservations: data}, () => console.log(this.state))
+      })
+    }
 
   render() {
     return (
