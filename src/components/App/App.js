@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getAllReservations } from '../../apiCalls.js'
+import { getAllReservations, postReservation } from '../../apiCalls.js'
 import Reservations from '../Reservations/Reservations'
 import Form from '../Form/Form'
 
@@ -22,10 +22,11 @@ class App extends Component {
     }
 
     addReservation = reservation => {
-      console.log(reservation)
+      const { name, date, time, number } = reservation;
       this.setState({
         reservations: [...this.state.reservations, reservation]
-      }, () => console.log(this.state.reservations))
+      })
+      postReservation({name, date, time, number})
     }
 
   render() {
