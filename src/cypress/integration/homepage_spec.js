@@ -50,4 +50,6 @@ describe ('Homepage', () => {
       .get('button').click()
       .get('.card').should('have.length', 9)
   })
+
+
 })
