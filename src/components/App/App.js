@@ -12,9 +12,9 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    getAllReservations()
+     getAllReservations()
       .then(data => {
-        this.setState({reservations: data}, () => console.log(this.state))
+        this.setState({reservations: data})
       })
     }
 
