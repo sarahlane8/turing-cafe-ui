@@ -51,5 +51,4 @@ describe ('Homepage', () => {
       .get('.card').should('have.length', 9)
   })
 
-
 })
