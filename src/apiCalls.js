@@ -16,8 +16,8 @@ const postReservation = reservation => {
   .catch(err => console.log(err))
 }
 
-const deleteReservation = reservation => {
-  return fetch(`http://localhost:3001/api/v1/reservations/${reservation.id}`, {
+const deleteReservation = reservationId => {
+  return fetch(`http://localhost:3001/api/v1/reservations/${reservationId}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'

@@ -29,12 +29,12 @@ class App extends Component {
       postReservation({name, date, time, number})
     }
 
-    deleteMadeReservation = madeReservation => {
+    deleteMadeReservation = reservationId => {
       const filteredReservations = this.state.reservations.filter(reservation => {
-        return reservation.id !== madeReservation.id
+        return reservation.id !== reservationId
       })
       this.setState({reservations: filteredReservations})
-      deleteReservation(madeReservation)
+      deleteReservation(reservationId)
     }
 
   render() {
@@ -45,7 +45,7 @@ class App extends Component {
           <Form addReservation={this.addReservation}/>
         </div>
         <div className='resy-container'>
-          <Reservations reservations={this.state.reservations} />
+          <Reservations reservations={this.state.reservations} deleteMadeReservation={this.deleteMadeReservation} />
         </div>
       </div>
     )
