@@ -58,7 +58,7 @@ submitReservation = event => {
             onChange={event => this.handleChange(event)}
           />
 
-          <button onclick={() => this.submitReservation(event)}>Make Reservation</button>
+          <button onclick={(event) => this.submitReservation(event)}>Make Reservation</button>
 
         </form>
     )
