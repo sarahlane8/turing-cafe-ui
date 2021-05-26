@@ -3,13 +3,13 @@ import React, { Component } from 'react'
 class Form extends Component {
   constructor() {
     super()
-  }
   this.state = {
     name: '',
     date: '',
     time: '',
     number: ''
   }
+}
 
 handleChange = event => {
   this.setState({
@@ -51,7 +51,9 @@ handleChange = event => {
             placeholder="Number of guests"
             onChange={event => this.handleChange(event)}
           />
+        </form>
     )
+
   }
 
 

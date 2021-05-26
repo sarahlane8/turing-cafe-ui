@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { getAllReservations } from '../../apiCalls.js'
 import Reservations from '../Reservations/Reservations'
+import Form from '../Form/Form'
 
 
 
