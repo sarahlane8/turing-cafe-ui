@@ -27,7 +27,7 @@ submitReservation = event => {
     name,
     date,
     time,
-    number
+    number: parseInt(number)
   }
   this.props.addReservation(reservation)
   this.clearInputs()

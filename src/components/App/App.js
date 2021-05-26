@@ -25,7 +25,7 @@ class App extends Component {
       console.log(reservation)
       this.setState({
         reservations: [...this.state.reservations, reservation]
-      })
+      }, () => console.log(this.state.reservations))
     }
 
   render() {
