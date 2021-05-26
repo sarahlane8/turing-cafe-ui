@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getAllReservations, postReservation } from '../../apiCalls.js'
+import { getAllReservations, postReservation, deleteReservation } from '../../apiCalls.js'
 import Reservations from '../Reservations/Reservations'
 import Form from '../Form/Form'
 
@@ -27,6 +27,14 @@ class App extends Component {
         reservations: [...this.state.reservations, reservation]
       })
       postReservation({name, date, time, number})
+    }
+
+    deleteMadeReservation = madeReservation => {
+      const filteredReservations = this.state.reservations.filter(reservation => {
+        return reservation.id !== madeReservation.id
+      })
+      this.setState({reservations: filteredReservations})
+      deleteReservation(madeReservation)
     }
 
   render() {
