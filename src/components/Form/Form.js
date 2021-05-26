@@ -20,15 +20,26 @@ handleChange = event => {
 
 submitReservation = event => {
   event.preventDefault()
+
   const {name, date, time, number} = this.state;
   const reservation = {
+    id: Date.now(),
     name,
     date,
     time,
     number
   }
   this.props.addReservation(reservation)
+  this.clearInputs()
 }
+  clearInputs = () => {
+    this.setState({
+      name: '',
+      date: '',
+      time: '',
+      number: ''
+    })
+  }
 
   render() {
     return (
@@ -65,7 +76,7 @@ submitReservation = event => {
             onChange={event => this.handleChange(event)}
           />
 
-          <button onclick={(event) => this.submitReservation(event)}>Make Reservation</button>
+          <button onClick={ (event) => this.submitReservation(event)}>Make Reservation</button>
 
         </form>
     )
