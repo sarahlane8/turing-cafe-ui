@@ -46,7 +46,7 @@ handleChange = event => {
           />
 
           <input
-            type="text"
+            type="number"
             name='number'
             value={this.state.number}
             placeholder="Number of guests"
